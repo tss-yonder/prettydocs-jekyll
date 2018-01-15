@@ -1,0 +1,34 @@
+{% include _utils/common %}
+<header id="header" class="header {% if page.layout == 'landing' %}text-center{% endif %}">
+    <div class="container">
+        <div class="branding">
+            <h1 class="logo">
+                <a href="{{ page.url }}">
+                    <span aria-hidden="true" class="fa fa-book icon"></span>
+                    <span class="text-highlight">{{ general.header.title }}</span>
+                    <span class="text">{{ general.header.subtitle }}</span>
+                </a>
+            </h1>
+        </div>
+        {% if page.layout == 'landing' %}
+            <div class="tagline">
+                {% for tagline in general.header['tagline'] %}
+                    <p>{{ tagline }}</p>
+                {% endfor %}
+            </div>
+        {% else %}
+            <ol class="breadcrumb">
+                <li><a href="/{{ site.baseurl }}">Acasă</a></li>
+                {% for resource in resources %}
+                    {% if resource == "" %}{% continue %}{% endif %}
+                    {% assign resource_url =  resource_url | append: "/" | append: resource %}
+                    {% if forloop.last == true %}
+                        <li class="active">{{ page.title }}</li>
+                    {% else %}
+                        <li><a href="{{ resource_url }}">{{ resource | capitalize }}</a></li>
+                    {% endif %}
+                {% endfor %}
+            </ol>
+        {% endif %}
+    </div>
+</header>

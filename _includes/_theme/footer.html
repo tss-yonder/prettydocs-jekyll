@@ -1,0 +1,19 @@
+{% include _utils/month date=site.time %}
+<footer class="footer text-center">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2 col-xs-6">
+                <small class="copyright">
+                    Bazat pe <a href="https://github.com/xriley/PrettyDocs-Theme" target="_blank">PrettyDocs</a>,
+                    dezvoltat de <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a>.
+                </small>
+            </div>
+            <div class="offset-md-2 col-md-8 col-xs-6">
+                <small>
+                Ultima actualizare: {{ site.time | date: "%-d" }} {{ month }} {{ site.time | date: "%Y" }} /
+                <a itemprop="license" rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"title="Conținut licențiat sub termenii Attribution-NonCommercial-ShareAlike 4.0 International">CC</a>
+                </small>
+            </div>
+        </div>
+    </div>
+</footer>

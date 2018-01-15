@@ -1,0 +1,8 @@
+{% if site.data[page.group].base %}
+    {% assign general = site.data[page.group].base %}
+{% else %}
+    {% assign general = site.data.default.base %}
+{% endif %}
+
+{% assign resources = page.url | remove: site.url | remove: site.baseurl | split: '/' %}
+{% assign resource_url = site.baseurl %}
