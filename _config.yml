@@ -41,3 +41,8 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+# Enable minification SASS
+sass:
+  sass_dir:         assets/css
+  style:            compressed

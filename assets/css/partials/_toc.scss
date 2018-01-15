@@ -1,0 +1,163 @@
+.toc-sidebar {
+    width: 230px;
+}
+
+.toc-menu {
+    list-style: none;
+    padding-left: 0;
+    
+    & > li {
+        margin-bottom: 5px;
+        & > a {
+            display: block;
+            padding: 5px 15px;
+            border-left: 4px solid transparent;
+            color: $text-color-secondary;
+            &:hover, &:focus {
+                color: $color-primary;
+                text-decoration: none;
+                background: none;
+                .body-green & {
+                    color: $color-green;
+                }
+                .body-blue & {
+                    color: $color-blue;
+                }
+                .body-orange & {
+                    color: $color-orange;
+                }
+                .body-red & {
+                    color: $color-red;
+                }
+                .body-pink & {
+                    color: $color-pink;
+                }
+                .body-purple & {
+                    color: $color-purple;
+                }
+            }
+        }
+        &.active {
+            & > a {
+                background: none;
+                border-left: 4px solid $color-primary;
+                color: $color-primary;
+                font-weight: 600;
+                .body-green & {
+                    color: $color-green;
+                    border-color: $color-green;
+                }
+                .body-blue & {
+                    color: $color-blue;
+                    border-color: $color-blue;
+                }
+                .body-orange & {
+                    color: $color-orange;
+                    border-color: $color-orange;
+                }
+                .body-red & {
+                    color: $color-red;
+                    border-color: $color-red;
+                }
+                .body-pink & {
+                    color: $color-pink;
+                    border-color: $color-pink;
+                }
+                .body-purple & {
+                    color: $color-purple;
+                    border-color: $color-purple;
+                }
+            }
+            
+            
+        }
+    }
+}
+
+.toc-sub-menu {
+    list-style: none;
+    padding-left: 0;
+    & > li {
+        margin-bottom: 10px;
+        font-size: 12px;
+        &:first-child {
+            padding-top: 5px;
+        }
+        & > a {
+            display: block;
+            color: $text-color-secondary;
+            padding: 0;
+            padding-left: 34px;
+            background: none;
+            &:hover{
+                color: $color-primary;
+                text-decoration: none;
+                background: none;
+                .body-green & {
+                    color: $color-green;
+                }
+                .body-blue & {
+                    color: $color-blue;
+                }
+                .body-orange & {
+                    color: $color-orange;
+                }
+                .body-red & {
+                    color: $color-red;
+                }
+                .body-pink & {
+                    color: $color-pink;
+                }
+                .body-purple & {
+                    color: $color-purple;
+                }
+            }
+            &:focus {
+                background: none;
+            }
+        }
+        &.active {
+            & > a {
+                background: none;
+                color: $color-primary;
+                .body-green & {
+                    color: $color-green;
+                }
+                .body-blue & {
+                    color: $color-blue;
+                }
+                .body-orange & {
+                    color: $color-orange;
+                }
+                .body-red & {
+                    color: $color-red;
+                }
+                .body-pink & {
+                    color: $color-pink;
+                }
+                .body-purple & {
+                    color: $color-purple;
+                }
+            }
+        }
+    }
+}
+
+.affix-top {
+    position: absolute;
+    top: 15px;
+}
+
+.affix {
+    top: 15px;
+}
+
+.affix, 
+.affix-top,
+.affix-bottom {
+    width: 230px;
+}
+
+.affix-bottom {
+    position: absolute;
+}
