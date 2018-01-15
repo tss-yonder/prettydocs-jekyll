@@ -1,10 +1,10 @@
 $(document).ready(function() {
-	
-	/* ===== Affix Sidebar ===== */
-	/* Ref: http://getbootstrap.com/javascript/#affix-examples */
+    
+    /* ===== Affix Sidebar ===== */
+    /* Ref: http://getbootstrap.com/javascript/#affix-examples */
 
-    	
-	$('#doc-menu').affix({
+        
+    $('#toc-menu').affix({
         offset: {
             top: ($('#header').outerHeight(true) + $('#doc-header').outerHeight(true)) + 45,
             bottom: ($('#footer').outerHeight(true) + $('#promo-block').outerHeight(true)) + 75
@@ -17,17 +17,17 @@ $(document).ready(function() {
     });
 
     /* Activate scrollspy menu */
-    $('body').scrollspy({target: '#doc-nav', offset: 100});
+    $('body').scrollspy({target: '#toc-nav', offset: 100});
     
     /* Smooth scrolling */
-	$('a.scrollto').on('click', function(e){
+    $('a.scrollto').on('click', function(e){
         //store hash
         var target = this.hash;    
         e.preventDefault();
-		$('body').scrollTo(target, 800, {offset: 0, 'axis':'y'});
-		
-	});
-	
+        $('body').scrollTo(target, 800, {offset: 0, 'axis':'y'});
+        
+    });
+    
     
     /* ======= jQuery Responsive equal heights plugin ======= */
     /* Ref: https://github.com/liabru/jquery-match-height */
@@ -42,6 +42,4 @@ $(document).ready(function() {
         e.preventDefault();
         $(this).ekkoLightbox();
     });    
-
-
 });

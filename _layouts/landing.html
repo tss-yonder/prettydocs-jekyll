@@ -1,0 +1,18 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="{{ site.lang }}" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="{{ site.lang }}" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="{{ site.lang }}"> <!--<![endif]-->
+    {% include _theme/head.html %}
+    <body class="landing-page">
+        <div class="page-wrapper">
+            {% include _theme/header.html %}
+            {% include _sections/cards.html %}
+            {{ content }}
+        </div>
+        {% include _theme/footer.html %}
+        {% include _theme/js.html %}
+    </body>
+</html>

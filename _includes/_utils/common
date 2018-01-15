@@ -4,5 +4,11 @@
     {% assign general = site.data.default.base %}
 {% endif %}
 
+{% if site.data[page.group].cards %}
+    {% assign cards = site.data[page.group].cards %}
+{% else %}
+    {% assign cards = site.data.default.cards %}
+{% endif %}
+
 {% assign resources = page.url | remove: site.url | remove: site.baseurl | split: '/' %}
 {% assign resource_url = site.baseurl %}

@@ -1,0 +1,25 @@
+{% include _utils/common %}
+<section class="cards-section text-center">
+    {% for container in cards %}
+    <div class="cards-container container container-fluid">
+        {% if container.title %}<h2 class="title">{{ container.title }}</h2>{% endif %}
+        {% if container.intro %}<div class="intro">{{ container.intro }}</div>{% endif %}
+        <div id="cards-wrapper" class="cards-wrapper row row-centered">
+            {% for card in container.cards %}
+                <div class="item item-{{ card.color }} col-md-4 col-sm-6 col-xs-12 col-centered">
+                    <div class="item-inner">
+                        <div class="icon-holder">
+                            <span aria-hidden="true" class="icon fa {{ card.icon }}"></span>
+                        </div>
+                        {% if card.title %}<h3 class="title">{{ card.title }}</h3>{% endif %}
+                        {% if card.intro %}<p class="intro">{{ card.intro }}</p>{% endif %}
+                        <a class="link" href="{{ card.url | prepend: site.baseurl }}">
+                            <span></span>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</section>
