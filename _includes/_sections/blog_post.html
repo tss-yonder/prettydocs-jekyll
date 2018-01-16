@@ -1,0 +1,33 @@
+{% include _utils/month date=page.date %}
+<section id="blog_post" class="blog-post-section doc-wrapper">
+    <div class="container">
+        <div id="doc-header" class="doc-header text-center">
+            <h1 class="doc-title" itemprop="name headline">
+                <i class="icon fa fa-paper-plane"></i>
+                {{ page.title | escape }}
+            </h1>
+            <div class="meta">
+                 Publicat de <i class="fa fa-user"></i>
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ page.author }}</span>
+                </span>
+                pe <i class="fa fa-clock-o"></i> 
+                <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                    {{ page.date | date: "%-d" }} {{ month }} {{ page.date | date: "%Y" }}
+                </time>
+            </div>
+        </div>
+        <div class="doc-body">
+            <div class="doc-content">
+                <div class="content-inner">
+                    <section id="dashboards" class="doc-section">
+                        <div class="section-block">
+                             {{ content }}    
+                        </div>
+                    </section>
+                </div>
+            </div>
+            {% include _partials/toc.html content=content maximum_level=4%}
+        </div>
+    </div>
+</section>

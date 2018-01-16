@@ -1,0 +1,68 @@
+{% assign resources = '' | split: '' %}
+{% assign resource_url = "/resurse" | prepend: site.baseurl %}
+{% assign resource_path = '' | split: '' %}
+
+{% for post in site.posts %}
+    {% assign is_valid = true %}
+    {% for category in page.categories %}
+        {% unless post.categories contains category %}
+            {% assign is_valid = false %}
+            {% break %}
+        {% endunless %}
+    {% endfor %}
+
+    {% if is_valid %}
+        {% assign resources = resources | push: post %}
+    {% endif %}
+{% endfor %}
+
+{% capture element %}<a href="{{ resource_url }}">resurse</a>{% endcapture %}
+{% assign resource_path = resource_path | push: element %}
+{% for category in page.categories %}
+  {% assign resource_url =  resource_url | append: "/" | append: category %}
+  {% capture element %}<a href="{{ resource_url }}">{{ category }}</a>{% endcapture %}
+  {% assign resource_path = resource_path | push: element %}
+{% endfor %}
+
+<section id="resources" class="resources-section doc-wrapper">
+    <div class="container">
+        <div id="doc-header" class="doc-header text-center">
+            <h1 class="doc-title">
+                <span aria-hidden="true" class="fa fa-code-fork icon">
+                </span> {{ page.title }}
+            </h1>
+            <div class="meta">
+                {% if page.subcategories.size > 0 %}
+                    <i class="fa fa-tags"></i> Subcategorii:
+                    {% for subcategory in page.subcategories %}
+                        <a href="{{ subcategory }}">
+                            <span class="label label-info">{{ subcategory }}</span>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    <i class="fa fa-arrow-left"></i>
+                    <a href="../">Mergi înapoi..</a>
+                {% endif %}
+            </div>
+        </div><!--//doc-header-->
+        <div class="doc-body">
+            <div class="doc-content">
+                <div class="content-inner">
+                    <section id="dashboards" class="doc-section">
+                        <div class="section-block">
+                            <div class="row">
+                                {% if resources.size > 0 %}
+                                    {% for post in resources %}
+                                        {% include _partials/post.html %}
+                                    {% endfor %}
+                                {% else %}
+                                    Acest director nu conține nici o resursă.
+                                {% endif %}
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
