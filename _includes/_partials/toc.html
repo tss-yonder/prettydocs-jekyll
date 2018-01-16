@@ -1,0 +1,43 @@
+{% capture _null %}
+    {% capture document_menu %}{% endcapture %}
+    {% assign minimum_level  = include.minimum_level | default: 1  %}
+    {% assign maximum_level  = include.maximum_level | default: 3  %}
+    {% assign headers = include.content | split: '<h' %}
+    {% for header in headers %}
+        {% if header == "" %}{% continue %}{% endif %}
+        {% assign level = header | replace: '"', '' | slice: 0, 1 | times: 1 %}
+        {% if level < minimum_level or level > maximum_level %}
+            {% continue %}
+        {% endif %}
+        {% assign content   = header | split: '</h' | first | split: '>' | last  %}
+        {% assign header_id = header | split: 'id="' | last | split: '"' | first %}
+        {% capture document_menu %}
+            {{ document_menu }}
+            {% if previous_level == level %}
+                </li>
+            {% elsif previous_level < level %}
+                {% assign submenu_open = true %}
+                <ul class="toc-sub-menu nav nav-stacked">
+            {% elsif previous_level  > level %}
+                {% assign submenu_open = false %}
+                </li></ul></li>
+            {% endif %}
+            <li><a class="scrollto" href="#{{ header_id }}">{{ content }}</a>
+            {% assign previous_level = level | times: 1 %}
+        {% endcapture %}
+    {% endfor %}
+    {% capture document_menu %}
+        {{ document_menu }}
+        {% if submenu_open %} </li></ul></li>
+        {% else %}            </li></ul>
+        {% endif %}
+    {% endcapture %}
+{% endcapture %}
+{% assign _null = '' %}
+<div class="toc-sidebar hidden-xs">
+    <nav id="toc-nav">
+        <ul id="toc-menu" class="toc-menu nav nav-stacked" data-spy="affix" data-offset-top="180">
+            {{ document_menu | strip }}
+        </ul>
+    </nav>
+</div>
