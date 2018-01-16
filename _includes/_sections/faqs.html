@@ -1,0 +1,28 @@
+{% include _utils/common %}
+{% for faq in faqs %}
+<section id="" class="doc-section">
+    <h2 id="{{ faq.section | handleize }}" class="section-title">{{ faq.section }}</h2>
+    {% if faq.questions.size > 0 %}
+        {% for question in faq.questions %}
+        <div class="section-block">
+            <h4 id="{{ question.title | handleize }}" class="question">
+                <i class="fa fa-question-circle"></i> {{ question.title }}
+                {% if question.is_new %}
+                    <span class="label label-success">Nouă</span>
+                {% elsif question.was_updated %}
+                    <span class="label label-warning">Actualizată</span>
+                {% endif %}
+            </h4>
+            <div class="answer">{{ question.answer }}</div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="section-block">
+            <h4 class="question">
+                <i class="fa fa-exclamation-circle"></i>
+                Nu a fost adresată nici o întrebare în această categorie.
+            </h4>
+        </div>
+    {% endif %}
+</section>    
+{% endfor %}

@@ -10,5 +10,11 @@
     {% assign cards = site.data.default.cards %}
 {% endif %}
 
+{% if site.data[page.group].faqs %}
+    {% assign faqs = site.data[page.group].faqs %}
+{% else %}
+    {% assign faqs = site.data.default.faqs %}
+{% endif %}
+
 {% assign resources = page.url | remove: site.url | remove: site.baseurl | split: '/' %}
 {% assign resource_url = site.baseurl %}
