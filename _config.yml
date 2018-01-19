@@ -7,6 +7,7 @@ force-https: True
 lang: "ro"
 paginate: 5
 google-tracking-id: ""
+theme: "prettydocs-jekyll"
 
 # Build Settings
 markdown: kramdown
@@ -28,7 +29,6 @@ sass:
 plugins:
   - jekyll-sitemap
   - jekyll-paginate
-  - jemoji
 
 exclude:
   - CONTRIBUTING

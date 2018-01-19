@@ -1,20 +1,4 @@
 ---
-sitemap: false
 ---
 
-// Modules and Variables
-@import "globals/base";
-@import "globals/mixins";
-@import "partials/helper";
-
-// Sections
-@import "partials/base";
-@import "partials/buttons";
-@import "partials/cards";
-@import "partials/doc";
-@import "partials/footer";
-@import "partials/header";
-@import "partials/landing";
-@import "partials/post";
-@import "partials/resources";
-@import "partials/toc";
+@import 'prettydocs-jekyll';
