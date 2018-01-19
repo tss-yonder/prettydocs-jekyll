@@ -5,3 +5,18 @@ header:
   title: 'Pretty'
   subtitle: 'Docs'
   tagline: []
+social:
+  - title: "github"
+    url: ""
+  - title: "linkedin"
+    url: ""
+  - title: "facebook"
+    url: ""
+  - title: "twitter"
+    url: ""
+  - title: "youtube"
+    url: ""
+  - title: "link"
+    url: ""
+  - title: "rss"
+    url: ""

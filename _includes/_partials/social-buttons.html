@@ -1,0 +1,6 @@
+{% include _utils/common %}
+<ul class="list-inline social-buttons">
+{% for social_network in general.social %}
+    <li><a href="{{ social_network.url }}" target="_blank"><i class="fa fa-{{ social_network.title }} fa-fw"></i></a></li>
+{% endfor %}
+</ul>
