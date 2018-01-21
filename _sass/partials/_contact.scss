@@ -1,0 +1,29 @@
+.contact {
+
+    .jumbotron {
+        h1 {
+            font-size: 28px;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+    }
+
+    .bubble {
+        background: #fff;
+        @include border-radius(4px);
+        padding: 30px;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        position: relative;
+        
+        .jumbotron  & {
+               
+            p {
+                font-size: 14px;
+                font-weight: normal;
+                color: $text-color-secondary;
+            }
+        }
+    }
+
+}

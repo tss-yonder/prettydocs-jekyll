@@ -1,0 +1,25 @@
+{% include _utils/common %}
+<section id="contact" class="contact doc-section">
+    {% for section in contact %}
+        <h2 class="section-title">{{ section.title }}</h2>
+        <div class="section-block">
+            <div class="jumbotron text-center">
+                <p>{{ section.description }}</p>
+                {% for member in section.members %}
+                    <div class="bubble row">                    
+                        <div class="avatar text-center col-md-2 col-sm-4 col-xs-4">
+                            <a class="center-block" href="" target="_blank">
+                                <img class="img-responsive img-circle" src="{{ "/assets/images/avatar/" | prepend: site.baseurl }}{% if member.avatar !="" %}{{ memeber.avatar }}{% else %}labtocat.png{% endif %}" alt="">
+                            </a>
+                        </div>
+                        <div class="text-center col-md-10 col-sm-8 col-xs-8">
+                            <h3>{{ member.name }}</h3>
+                            <p><i class="fa fa-envelope fa-fw"></i> {{ member.email }}</p>
+                            {% include _partials/social-buttons.html social=member.social %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% endfor %}
+</section>

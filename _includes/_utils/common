@@ -16,5 +16,11 @@
     {% assign faqs = site.data.default.faqs %}
 {% endif %}
 
+{% if site.data[page.group].contact %}
+    {% assign contact = site.data[page.group].contact %}
+{% else %}
+    {% assign contact = site.data.default.contact %}
+{% endif %}
+
 {% assign resources = page.url | remove: site.url | remove: site.baseurl | split: '/' %}
 {% assign resource_url = site.baseurl %}

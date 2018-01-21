@@ -1,0 +1,25 @@
+- title: "Our team"
+  description: >
+    Curabitur mauris leo, hendrerit et orci ultricies, ultrices consequat nibh.
+    Donec in ornare leo. Mauris at hendrerit nibh. Morbi porttitor eros leo,
+    eget vestibulum arcu consequat pellentesque. Sed blandit porttitor est
+    eget placerat. Nunc et cursus eros, nec interdum libero. Duis efficitur
+    lorem felis, nec consequat mi commodo et. Mauris fermentum mattis
+    ligula ut dignissim.
+  members:
+    - name: Alexandru Coman
+      avatar: ""
+      email: "alexandru.coman@tss-yonder.com"
+      social:
+        - title: "Github Page"
+          icon: "fa-github"
+          url: ""
+        - title: "LinkedIn Profile"
+          icon: "fa-linkedin"
+          url: ""
+        - title: "Facebook Page"
+          icon: "fa-facebook"
+          url: ""
+        - title: "RSS Feed"
+          icon: "fa-rss"
+          url: ""

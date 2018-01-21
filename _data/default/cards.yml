@@ -20,13 +20,13 @@
       intro: 'Cras in nisi ligula.'
       color: 'green'
       icon:  'fa-rss'
-      url: 'resurse'
+      url: ''
 
     - title: 'FAQs'
       intro: 'Proin eu porttitor elit. Donec vitae nulla felis.'
       color: 'purple'
       icon:  'fa-question'
-      url: 'faqs'
+      url: ''
 
     - title: 'Contact'
       intro: 'Pellentesque pharetra elit a leo venenatis, pellentesque feugiat mauris volutpat.'
