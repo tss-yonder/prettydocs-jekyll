@@ -101,3 +101,8 @@ select {
 .video-container iframe {
     max-width: 100%;    
 }
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
