@@ -1,25 +1,23 @@
-{% if site.data[page.group].base %}
-    {% assign general = site.data[page.group].base %}
-{% else %}
-    {% assign general = site.data.default.base %}
+{% assign groups = page.group | split: '.' %}
+{% assign page_data = site.data %}
+{% for group in groups %}
+	{% assign page_data = page_data[group] %}
+{% endfor %}
+
+{% if page_data.base %}		{% assign general = page_data.base %}
+{% else %}					{% assign general = site.data.default.base %}
 {% endif %}
 
-{% if site.data[page.group].cards %}
-    {% assign cards = site.data[page.group].cards %}
-{% else %}
-    {% assign cards = site.data.default.cards %}
+{% if page_data.cards %}	{% assign cards = page_data.cards %}
+{% else %}					{% assign cards = site.data.default.cards %}
 {% endif %}
 
-{% if site.data[page.group].faqs %}
-    {% assign faqs = site.data[page.group].faqs %}
-{% else %}
-    {% assign faqs = site.data.default.faqs %}
+{% if page_data.faqs %}		{% assign faqs = page_data.faqs %}
+{% else %}					{% assign faqs = site.data.default.faqs %}
 {% endif %}
 
-{% if site.data[page.group].contact %}
-    {% assign contact = site.data[page.group].contact %}
-{% else %}
-    {% assign contact = site.data.default.contact %}
+{% if page_data.contact %}	{% assign contact = page_data.contact %}
+{% else %}					{% assign contact = site.data.default.contact %}
 {% endif %}
 
 {% assign resources = page.url | remove: site.url | remove: site.baseurl | split: '/' %}
