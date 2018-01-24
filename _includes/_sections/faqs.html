@@ -1,11 +1,11 @@
 {% include _utils/common %}
 {% for faq in faqs %}
 <section id="" class="doc-section">
-    <h2 id="{{ faq.section | handleize }}" class="section-title">{{ faq.section }}</h2>
+    <h2 id="{{ faq.section | slugify: 'latin' }}" class="section-title">{{ faq.section }}</h2>
     {% if faq.questions.size > 0 %}
         {% for question in faq.questions %}
         <div class="section-block">
-            <h4 id="{{ question.title | handleize }}" class="question">
+            <h4 id="{{ question.title | slugify: 'latin' }}" class="question">
                 <i class="fa fa-question-circle"></i> {{ question.title }}
                 {% if question.is_new %}
                     <span class="label label-success">Nouă</span>

@@ -4,6 +4,7 @@ meta:
 header:
   title: 'Pretty'
   subtitle: 'Docs'
+  icon: 'fa-book'
   tagline: []
 social:
   - title: "Github Page"
