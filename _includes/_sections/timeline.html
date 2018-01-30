@@ -1,0 +1,37 @@
+{% include _utils/common %}
+<section class="timeline timeline-line-dotted">
+    {% for item in timeline %}
+        {% if item.type == "event" %}
+            <div class="timeline-item{% if item.position %} timeline-item-{{ item.position }}{% endif %}">
+                <div class="timeline-point timeline-point-{{ item.point.class | default: 'black' }}">
+                    {% if item.point.icon %}
+                        <i class="fa {{ item.point.icon }}"></i>
+                    {% endif %}
+                </div>
+                <div class="timeline-event timeline-event-{{ item.class | default: 'primary' }}">
+                    <div class="timeline-heading">
+                        <h4>{{ item.heading }}</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p>{{ item.body }}</p>
+                    </div>
+                    {% if item.footer %}
+                        <div class="timeline-footer">
+                            <p class="text-right">{{ item.footer }}</p>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% elsif item.type == "label" %}
+            <span class="timeline-label">
+                <span class="label label-{{ item.class }}">    
+                    {% if item.content %}
+                        {{ item.content }}
+                    {% elsif item.icon %}
+                        <i class="fa {{ item.icon }}"></i>
+                    {% endif %}
+                </span>
+            </span>
+        {% endif %}
+    {% endfor %}
+</section>

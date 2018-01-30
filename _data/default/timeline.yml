@@ -1,0 +1,33 @@
+- type: 'label'
+  class: 'success'
+  icon: 'fa-play'
+
+- type: 'event'
+  class: 'info'
+  point:
+    class: 'black'
+    icon: 'fa-star'
+  heading: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  body: >
+    Donec vitae diam a lacus consectetur sagittis ac quis ligula. Sed nec dictum
+    diam. Sed sollicitudin sodales magna, fermentum pretium nibh aliquet in.
+    Morbi ullamcorper pellentesque lorem, sollicitudin facilisis augue. In nec
+    ipsum nec diam condimentum vehicula eu non eros.
+  footer: '03.03.2018 03:03'
+
+- type: 'event'
+  class: 'warning'
+  point:
+    class: 'black'
+    icon: 'fa-star'
+  heading: 'Suspendisse eget rhoncus mauris.'
+  body: >
+    Aenean id metus non elit iaculis hendrerit in eu elit. Curabitur dictum,
+    risus vitae aliquet vehicula, ligula quam suscipit nulla, vitae accumsan
+    massa nisi eget turpis. Sed vel egestas lorem, non rhoncus est. Vivamus
+    ut orci sed nisl bibendum cursus vel sed neque.
+  footer: '03.03.2018 03:03'
+
+- type: 'label'
+  class: 'danger'
+  icon: 'fa-stop'
