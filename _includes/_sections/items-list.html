@@ -1,0 +1,16 @@
+{% if include.items %} {% assign items = include.items %} {% endif %}
+<section class="items-list">
+    {% for item in items %}
+        <div class="callout-block{% if item.class %} callout-{{ item.class }}{% endif %}">
+            <div class="icon-holder">
+                <i class="fa {{ item.icon | default: 'fa-bullhorn' }}"></i>
+            </div>
+            <div class="content">
+                {% if item.title %}
+                    <h4 class="callout-title">{{ item.title }}</h4>
+                {% endif %}
+                <p>{{ item.content }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</section>
