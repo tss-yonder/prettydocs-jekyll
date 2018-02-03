@@ -1,6 +1,6 @@
 {% include _utils/common %}
 {% for faq in faqs %}
-<section id="" class="doc-section">
+<section class="doc-section">
     <h2 id="{{ faq.section | slugify: 'latin' }}" class="section-title">{{ faq.section }}</h2>
     {% if faq.questions.size > 0 %}
         {% for question in faq.questions %}
