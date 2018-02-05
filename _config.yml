@@ -30,6 +30,14 @@ plugins:
   - jekyll-sitemap
   - jekyll-paginate
 
+# Theme settings
+author:
+  name: "TSS-Yonder"
+  email: ""
+  website:
+    url: "https://tss-yonder.com/"
+    title: ""
+
 exclude:
   - CONTRIBUTING
   - CONTRIBUTORS
