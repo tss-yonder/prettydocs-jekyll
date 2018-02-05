@@ -1,20 +1,9 @@
 ---
-layout: default
+layout: page
 ---
-<section class="doc-wrapper">
-    <div class="container">
-        <div id="doc-header" class="doc-header text-center">
-            <h1 class="doc-title">
-                <span aria-hidden="true" class="icon fa fa-question-circle"></span> {{ page.title | escape }}
-            </h1>
-        </div>
-        <div class="doc-body">
-            <div class="doc-content">
-                <div class="content-inner">
-                    {{ content }}
-                </div>
-            </div>
-            {% include _partials/toc.html content=content maximum_level=2 %}
-        </div>
+<div class="doc-content">
+    <div class="content-inner">
+        {{ content }}
     </div>
-</section>
+</div>
+{% include _partials/toc.html content=content maximum_level=2 %}

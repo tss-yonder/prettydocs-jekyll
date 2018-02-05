@@ -1,4 +1,5 @@
 {% include _utils/common %}
+{% if include.timeline %}{% assign timeline = include.timeline%}{% endif %}
 <section class="timeline timeline-line-dotted">
     {% for item in timeline %}
         {% if item.type == "event" %}

@@ -3,8 +3,10 @@
     <div class="container">
         <div class="branding">
             <h1 class="logo">
-                <a href="{{ page.url }}">
-                    <span aria-hidden="true" class="fa {{ general.header.icon }} icon"></span>
+                <a href="{{ general.header.url | default: page.url }}">
+                    {% if general.header.icon %}
+                        <span aria-hidden="true" class="icon fa {{ general.header.icon }}"></span>
+                    {% endif %}
                     <span class="text-highlight">{{ general.header.title }}</span>
                     <span class="text">{{ general.header.subtitle }}</span>
                 </a>

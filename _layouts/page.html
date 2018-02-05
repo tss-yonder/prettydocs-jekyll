@@ -5,7 +5,10 @@ layout: default
     <div class="container">
         <div id="doc-header" class="doc-header text-center">
             <h1 class="doc-title">
-                <span aria-hidden="true" class="icon fa fa-{{ page.icon }}"></span> {{ page.title | escape }}
+                {% if page.icon %}
+                    <span aria-hidden="true" class="icon fa {{ page.icon }}"></span> 
+                {% endif %}
+                {{ page.title | escape }}
             </h1>
         </div>
         <div class="doc-body">

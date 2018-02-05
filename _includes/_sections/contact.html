@@ -8,7 +8,7 @@
                 {% for member in section.members %}
                     <div class="bubble row vertical-align">                    
                         <div class="avatar text-center col-md-2 col-sm-4 col-xs-4">
-                            <a class="center-block" href="" target="_blank">
+                            <a class="center-block" href="{{ member.url | default: '#' }}" target="_blank">
                                 <img class="img-responsive img-circle" src="https://www.gravatar.com/avatar/{{ member.email | remove: ' ' | strip_newlines | downcase | md5 }}" alt="{{ member.name }}"/>
                             </a>
                         </div>
