@@ -5,7 +5,7 @@
     {% for social_network in social %}
         <li>
             <a href="{{ social_network.url }}" title="{{ social_network.title }}" target="_blank">
-                <i class="fa {{ social_network.icon }} fa-fw"></i>
+                <i class="{{ social_network.icon }} fa-fw"></i>
             </a>
         </li>
     {% endfor %}

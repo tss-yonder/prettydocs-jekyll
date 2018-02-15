@@ -5,7 +5,7 @@
             <h1 class="logo">
                 <a href="{{ general.header.url | default: page.url }}">
                     {% if general.header.icon %}
-                        <span aria-hidden="true" class="icon fa {{ general.header.icon }}"></span>
+                        <span aria-hidden="true" class="icon {{ general.header.icon }}"></span>
                     {% endif %}
                     <span class="text-highlight">{{ general.header.title }}</span>
                     <span class="text">{{ general.header.subtitle }}</span>

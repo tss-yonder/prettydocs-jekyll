@@ -4,18 +4,18 @@ meta:
 header:
   title: 'Pretty'
   subtitle: 'Docs'
-  icon: 'fa-book'
+  icon: 'fas fa-book'
   tagline: []
 social:
   - title: "Github Page"
-    icon: "fa-github"
+    icon: "fab fa-github"
     url: ""
   - title: "LinkedIn Profile"
-    icon: "fa-linkedin"
+    icon: "fab fa-linkedin"
     url: ""
   - title: "Facebook Page"
-    icon: "fa-facebook"
+    icon: "fab fa-facebook"
     url: ""
   - title: "RSS Feed"
-    icon: "fa-rss"
+    icon: "fas fa-rss"
     url: ""

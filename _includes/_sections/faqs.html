@@ -6,7 +6,7 @@
         {% for question in faq.questions %}
         <div class="section-block">
             <h4 id="{{ question.title | slugify: 'latin' }}" class="question">
-                <i class="fa fa-question-circle"></i> {{ question.title }}
+                <i class="fas fa-question-circle"></i> {{ question.title }}
                 {% if question.is_new %}
                     <span class="label label-success">Nouă</span>
                 {% elsif question.was_updated %}
@@ -19,7 +19,7 @@
     {% else %}
         <div class="section-block">
             <h4 class="question">
-                <i class="fa fa-exclamation-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
                 Nu a fost adresată nici o întrebare în această categorie.
             </h4>
         </div>

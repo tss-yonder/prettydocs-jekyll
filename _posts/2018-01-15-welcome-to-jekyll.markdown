@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+author: ["Author 1", "Author 2"]
 date:   2018-01-15 16:53:00 +0200
 categories: jekyll
 ---

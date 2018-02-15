@@ -2,15 +2,24 @@
 <article>
     <header>
         <h3><a href="{{ post.url | prepend: site.baseurl }} ">{{ post.title }}</a></h3>
-        <i class="fa fa-user"></i> Autor:
-        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="name">{{ post.author }}</span>
-        </span> | 
-        <i class="fa fa-clock-o"></i> Data: 
+        Publicat de: 
+        {% if post.author.first %}
+            {% for author in post.author %}
+                <i class="fas fa-user"></i>
+                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                    <span itemprop="name">{{ author }}</span>
+                </span>
+            {% endfor %}
+        {% else %}
+            <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                <span itemprop="name">{{ post.author }}</span>
+            </span>
+        {% endif %}
+        | <i class="fas fa-clock"></i> Data: 
         <time datetime="{{ post.date | date_to_xmlschema }}" itemprop="datePublished">
             {{ post.date | date: "%-d" }} {{ month }} {{ post.date | date: "%Y" }}
         </time> | 
-        <i class="fa fa-tags"></i> Categorii:
+        <i class="fas fa-tags"></i> Categorii:
         {% capture container %}resurse/{% endcapture %}
         {% assign previous = "" %}
         {% for category in post.categories %}
@@ -26,7 +35,7 @@
     <div class="content">
         {% if post.excerpt %}{{ post.excerpt }}{% endif %}
         <p>
-            <a class="btn btn-primary btn-cta" href="{{ post.url | prepend: site.baseurl }}"><i class="fa fa-book"></i>Citește mai departe...</a>
+            <a class="btn btn-primary btn-cta" href="{{ post.url | prepend: site.baseurl }}"><i class="fas fa-book"></i>Citește mai departe...</a>
         </p>
     </div>
 </article>

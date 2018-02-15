@@ -6,16 +6,18 @@
             <div class="timeline-item{% if item.position %} timeline-item-{{ item.position }}{% endif %}">
                 <div class="timeline-point timeline-point-{{ item.point.class | default: 'black' }}">
                     {% if item.point.icon %}
-                        <i class="fa {{ item.point.icon }}"></i>
+                        <i class="{{ item.point.icon }}"></i>
                     {% endif %}
                 </div>
                 <div class="timeline-event timeline-event-{{ item.class | default: 'primary' }}">
                     <div class="timeline-heading">
                         <h4>{{ item.heading }}</h4>
                     </div>
-                    <div class="timeline-body">
-                        <p>{{ item.body }}</p>
-                    </div>
+                    {% if item.body%}
+                        <div class="timeline-body">
+                            <p>{{ item.body }}</p>
+                        </div>
+                    {% endif %}
                     {% if item.footer %}
                         <div class="timeline-footer">
                             <p class="text-right">{{ item.footer }}</p>
@@ -29,7 +31,7 @@
                     {% if item.content %}
                         {{ item.content }}
                     {% elsif item.icon %}
-                        <i class="fa {{ item.icon }}"></i>
+                        <i class="{{ item.icon }}"></i>
                     {% endif %}
                 </span>
             </span>

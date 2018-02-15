@@ -3,15 +3,24 @@
     <div class="container">
         <div id="doc-header" class="doc-header text-center">
             <h1 class="doc-title" itemprop="name headline">
-                <i class="icon fa fa-paper-plane"></i>
+                <i class="icon fas fa-paper-plane"></i>
                 {{ page.title | escape }}
             </h1>
             <div class="meta">
-                 Publicat de <i class="fa fa-user"></i>
-                <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-                    <span itemprop="name">{{ page.author }}</span>
-                </span>
-                pe <i class="fa fa-clock-o"></i> 
+                Publicat de:
+                {% if page.author.first %}
+                    {% for author in page.author %}
+                        <i class="fas fa-user"></i>
+                        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                            <span itemprop="name">{{ author }}</span>
+                        </span>
+                    {% endfor %}
+                {% else %}
+                    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+                        <span itemprop="name">{{ page.author }}</span>
+                    </span>
+                {% endif %}
+                pe <i class="fas fa-clock"></i> 
                 <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
                     {{ page.date | date: "%-d" }} {{ month }} {{ page.date | date: "%Y" }}
                 </time>

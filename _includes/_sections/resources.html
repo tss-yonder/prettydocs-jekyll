@@ -28,19 +28,19 @@
     <div class="container">
         <div id="doc-header" class="doc-header text-center">
             <h1 class="doc-title">
-                <span aria-hidden="true" class="fa fa-code-fork icon">
+                <span aria-hidden="true" class="fas fa-code-branch icon">
                 </span> {{ page.title }}
             </h1>
             <div class="meta">
                 {% if page.subcategories.size > 0 %}
-                    <i class="fa fa-tags"></i> Subcategorii:
+                    <i class="fas fa-tags"></i> Subcategorii:
                     {% for subcategory in page.subcategories %}
                         <a href="{{ subcategory }}">
                             <span class="label label-info">{{ subcategory }}</span>
                         </a>
                     {% endfor %}
                 {% else %}
-                    <i class="fa fa-arrow-left"></i>
+                    <i class="fas fa-arrow-left"></i>
                     <a href="../">Mergi înapoi..</a>
                 {% endif %}
             </div>
