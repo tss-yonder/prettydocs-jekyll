@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+    {% capture showerify_input %}{{ content }}{% endcapture %}
+    {% include _shower/showerify.html %}
+    {% include _shower/setup.md %}
+<html lang="{{ lang }}">
+    <head>
+        <title>{{ title | strip_html }}</title>
+        <meta charset="utf-8">
+        <link id="theme-style" rel="stylesheet" href="{{ "/assets/css/shower.css" | prepend: site.baseurl }}">
+    </head>
+    <body class="shower list">
+        <header class="caption">
+            <h1>{{ title }}</h1>
+            {% if subtitle %}{{ subtitle }}{% endif %}
+        </header>
+        {{ showerify_output }}
+        {% if progress %}
+            <div class="progress"><div></div></div>
+        {% endif %}
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/shower-core/2.1.0/shower.min.js" integrity="sha256-q52BKo1uAiqrR1kBKY6LWvBcwF4ujCgQokN5u8AwWzQ=" crossorigin="anonymous"></script>
+</html>
