@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "prettydocs-jekyll"
-  spec.version       = "0.0.6"
+  spec.version       = "0.1.0"
   spec.authors       = ["Alexandru Coman"]
   spec.email         = ["alexandru.coman@tss-yonder.com"]
  
