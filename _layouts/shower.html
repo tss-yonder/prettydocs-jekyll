@@ -6,9 +6,10 @@
     <head>
         <title>{{ title | strip_html }}</title>
         <meta charset="utf-8">
+        <meta name="viewport" content="width={% if width %}{{ width }}{% else %}792{% endif %}, user-scalable=no">
         <link id="theme-style" rel="stylesheet" href="{{ "/assets/css/shower.css" | prepend: site.baseurl }}">
     </head>
-    <body class="shower list">
+    <body class="shower {{ body_class }}">
         <header class="caption">
             <h1>{{ title }}</h1>
             {% if subtitle %}{{ subtitle }}{% endif %}
