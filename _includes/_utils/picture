@@ -1,0 +1,18 @@
+{% assign picture = include.picture %}
+{% if include.thumbnail %}  {% assign thumbnail = include.thumbnail %}
+{% else %}                  {% assign thumbnail = include.picture %}
+{% endif %}
+{% if include.class %}      {% assign class = include.class %}
+{% else %}                  {% assign class = "img-responsive center-block" %}
+{% endif %}
+{% if include.icon %}       {% assign icon = include.icon %}
+{% else %}                  {% assign icon = "fas fa-search-plus" %}
+{% endif %}
+<div class="screenshot-holder text-center">
+    <a href="{{ picture | prepend: site.baseurl }}" data-title="{{ include.title }}" data-toggle="lightbox">
+        <img class="{{ class }}" src="{{ thumbnail | prepend: site.baseurl }}" alt="{{ include.title }}">
+    </a>
+    <a class="mask" href="{{ picture | prepend: site.baseurl }}" data-title="{{ include.title }}" data-toggle="lightbox">
+        <span class="icon {{ icon }}"></span>
+    </a>
+</div>
