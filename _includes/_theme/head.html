@@ -31,8 +31,8 @@
     <![endif]-->
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-    {% if jekyll.environment == 'production' and site.google_analytics %}
-        {% include google-analytics.html %}
-    {% endif %}
     <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    {% if page.highlight or post.highlight %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" integrity="sha256-3YM6A3pH4QFCl9WbSU8oXF5N6W/2ylvW0o2g+Z6TmLQ=" crossorigin="anonymous" />
+    {% endif %}
 </head>

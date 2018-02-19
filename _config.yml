@@ -11,7 +11,7 @@ theme: "prettydocs-jekyll"
 
 # Build Settings
 markdown: kramdown
-highlighter: rouge
+highlighter: none
 kramdown:
   input:            GFM
   auto_ids:         true
