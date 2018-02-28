@@ -3,9 +3,10 @@
     <div class="container">
         <div id="doc-header" class="doc-header text-center">
             <h1 class="doc-title" itemprop="name headline">
-                <i class="icon fas fa-paper-plane"></i>
+                <i class="icon {{ page.icon | default: "fas fa-paper-plane" }}"></i>
                 {{ page.title | escape }}
             </h1>
+            {% if page.author %}
             <div class="meta">
                 Publicat de:
                 {% if page.author.first %}
@@ -25,6 +26,7 @@
                     {{ page.date | date: "%-d" }} {{ month }} {{ page.date | date: "%Y" }}
                 </time>
             </div>
+            {% endif %}
         </div>
         <div class="doc-body">
             <div class="doc-content">

@@ -1,5 +1,8 @@
+---
+layout: compress
+---
+{% capture showerify_input %}{{ content }}{% endcapture %}
 <!DOCTYPE HTML>
-    {% capture showerify_input %}{{ content }}{% endcapture %}
     {% include _shower/showerify.html %}
     {% include _shower/setup.md %}
 <html lang="{{ lang }}">
@@ -7,6 +10,7 @@
         <title>{{ title | strip_html }}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width={% if width %}{{ width }}{% else %}792{% endif %}, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,  ,700,700i&amp;subset=latin-ext" rel="stylesheet">
         <link id="theme-style" rel="stylesheet" href="{{ "/assets/css/shower.css" | prepend: site.baseurl }}">
     </head>
     <body class="shower {{ body_class }}">

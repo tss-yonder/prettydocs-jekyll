@@ -1,0 +1,11 @@
+<div class="callout-block{% if include.class %} callout-{{ include.class }}{% endif %}">
+    <div class="icon-holder">
+        <i class="{{ item.icon | default: 'fas fa-bullhorn' }}"></i>
+    </div>
+    <div class="content">
+        {% if include.title %}
+            <h4 class="callout-title">{{ include.title }}</h4>
+        {% endif %}
+        <p>{{ include.content }}</p>
+    </div>
+</div>
