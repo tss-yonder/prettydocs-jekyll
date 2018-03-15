@@ -63,6 +63,25 @@
                     </section>
                 </div>
             </div>
+            <div class="toc-sidebar hidden-xs">
+                <nav id="toc-nav">
+                    <ul id="toc-menu" class="toc-menu nav nav-stacked" data-spy="affix" data-offset-top="180">
+                        <li><i class="fas fa-tags"></i> Subcategorii
+                            <ul class="toc-sub-menu nav nav-stacked">
+                                {% if page.subcategories.size > 0 %}
+                                    {% for subcategory in page.subcategories %}
+                                        <li>
+                                            <a href="{{ subcategory }}">{{ subcategory }}</a>
+                                        </li>
+                                    {% endfor %}
+                                {% else %}
+                                    <li>Nu există subcategorii</li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </div>
     </div>
 </section>
