@@ -5,6 +5,16 @@
 @import 'shower/defaults';
 @import 'shower/reset';
 
+img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: auto;
+}
 .shower {
     counter-reset:slide;
     font:24px/2 'Open Sans', sans-serif;
@@ -439,7 +449,7 @@
                     content:'';
                 }
             }
-    
+
             &.cover,
             &.shout {
                 &:after {
@@ -452,7 +462,7 @@
                 }
             }
         }
-    
+
     .shower.full {
         position:absolute;
         top:50%;
@@ -462,7 +472,7 @@
         width:$width;
         height:$height;
         background:#000;
-    
+
         &.debug:after {
             position:absolute;
             top:0;
@@ -473,29 +483,29 @@
             background:url(../images/grid-#{$ratio}.svg) no-repeat;
             content:'';
         }
-        
+
         .region {
             @include offscreen;
             display:block;
         }
-        
+
         .slide {
             position:absolute;
             top:0;
             left:0;
             margin-left:150%;
-            
+
             .next {
                 visibility:hidden;
                 &.active {
                     visibility:visible;
                     }
                 }
-        
+
             &:target {
                 margin:0;
                 }
-        
+
             &.shout {
                 &.right, &.up {
                     h2 {
@@ -515,7 +525,7 @@
                     }
                 }
             }
-        
+
         .progress {
             position:absolute;
             bottom:0;
